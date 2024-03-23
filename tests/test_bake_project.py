@@ -41,13 +41,13 @@ def test_bake_with_defaults(cookies):
         assert result.exit_code == 0
         assert result.exception is None
 
-        assert result.project_path.name == "nebula-collection"
+        assert result.project_path.name == "nebulaplugins-collection"
 
         found_toplevel_files = [f.name for f in result.project_path.iterdir()]
         assert "setup.py" in found_toplevel_files
         assert "requirements.txt" in found_toplevel_files
         assert "requirements-dev.txt" in found_toplevel_files
-        assert "nebula_collection" in found_toplevel_files
+        assert "nebulaplugins_collection" in found_toplevel_files
         assert "README.md" in found_toplevel_files
         assert "tests" in found_toplevel_files
         assert ".github" in found_toplevel_files
