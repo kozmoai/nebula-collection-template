@@ -25,7 +25,7 @@ jobs:
           cookiecutter --no-input --overwrite-if-exists .
       - name: Run pre-commit on generated collection
         run: |
-          cd nebula-collection
+          cd nebulaplugins-collection
           git init
           git config user.email "test@example.com"
           git config user.name "Test"
