@@ -1,4 +1,4 @@
 pytest
 cookiecutter
 pytest-cookies
-nebula
+nebulaconsole
