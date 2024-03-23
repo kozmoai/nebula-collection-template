@@ -26,6 +26,6 @@ if not re.match(NEBULA_COLLECTION_MODULE_REGEX, collection_slug):
 if not re.match(NEBULA_COLLECTION_NAME_REGEX, collection_name):
     print(
         "ERROR: The collection name ({collection_name}) is not a valid Nebula collection name. "
-        "Please ensure your collection slug is prefixed with 'nebula-'"
+        "Please ensure your collection slug is prefixed with 'nebulaplugins-'"
     )
     sys.exit(1)

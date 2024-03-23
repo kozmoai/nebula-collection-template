@@ -58,14 +58,14 @@ def test_bake_with_defaults(cookies):
 
 
 def test_bake_with_custom_name(cookies):
-    context = {"collection_name": "nebula-awesome"}
+    context = {"collection_name": "nebulaplugins-awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert result.project_path.is_dir()
         assert result.exit_code == 0
         assert result.exception is None
 
-        assert result.project_path.name == "nebula-awesome"
-        assert (result.project_path / "nebula_awesome").exists
+        assert result.project_path.name == "nebulaplugins-awesome"
+        assert (result.project_path / "nebulaplugins_awesome").exists
 
 
 def test_bake_and_run_tests(cookies):
@@ -77,12 +77,12 @@ def test_bake_and_run_tests(cookies):
 
 
 def test_bake_with_underscore_name_fail(cookies):
-    context = {"collection_name": "nebula_awesome"}
+    context = {"collection_name": "nebulaplugins_awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert isinstance(result.exception, FailedHookException)
 
 
 def test_bake_with_hyphen_slug_fail(cookies):
-    context = {"collection_slug": "nebula-awesome"}
+    context = {"collection_slug": "nebulaplugins-awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert isinstance(result.exception, FailedHookException)
