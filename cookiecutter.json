@@ -2,7 +2,7 @@
     "full_name": "Kozmo AI",
     "email": "kozmo@example.com",
     "github_organization": "kozmoai",
-    "collection_name": "nebulaplugins-collection",
+    "collection_name": "nebula-collection",
     "collection_slug": "{{ cookiecutter.collection_name.lower().replace(' ', '_').replace('-', '_') }}",
     "collection_short_description": "Nebula Collection Template contains all the boilerplate that you need to create a Nebula collection.",
     "_copy_without_render": [".github/workflows/*.yml"]

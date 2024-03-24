@@ -41,13 +41,13 @@ def test_bake_with_defaults(cookies):
         assert result.exit_code == 0
         assert result.exception is None
 
-        assert result.project_path.name == "nebulaplugins-collection"
+        assert result.project_path.name == "nebula-collection"
 
         found_toplevel_files = [f.name for f in result.project_path.iterdir()]
         assert "setup.py" in found_toplevel_files
         assert "requirements.txt" in found_toplevel_files
         assert "requirements-dev.txt" in found_toplevel_files
-        assert "nebulaplugins_collection" in found_toplevel_files
+        assert "nebula_collection" in found_toplevel_files
         assert "README.md" in found_toplevel_files
         assert "tests" in found_toplevel_files
         assert ".github" in found_toplevel_files
@@ -58,14 +58,14 @@ def test_bake_with_defaults(cookies):
 
 
 def test_bake_with_custom_name(cookies):
-    context = {"collection_name": "nebulaplugins-awesome"}
+    context = {"collection_name": "nebula-awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert result.project_path.is_dir()
         assert result.exit_code == 0
         assert result.exception is None
 
-        assert result.project_path.name == "nebulaplugins-awesome"
-        assert (result.project_path / "nebulaplugins_awesome").exists
+        assert result.project_path.name == "nebula-awesome"
+        assert (result.project_path / "nebula_awesome").exists
 
 
 def test_bake_and_run_tests(cookies):
@@ -77,12 +77,12 @@ def test_bake_and_run_tests(cookies):
 
 
 def test_bake_with_underscore_name_fail(cookies):
-    context = {"collection_name": "nebulaplugins_awesome"}
+    context = {"collection_name": "nebula_awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert isinstance(result.exception, FailedHookException)
 
 
 def test_bake_with_hyphen_slug_fail(cookies):
-    context = {"collection_slug": "nebulaplugins-awesome"}
+    context = {"collection_slug": "nebula-awesome"}
     with bake_in_temp_dir(cookies, extra_context=context) as result:
         assert isinstance(result.exception, FailedHookException)

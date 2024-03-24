@@ -2,12 +2,12 @@
 
 cookiecutter --no-input --overwrite-if-exists .
 
-cd nebulaplugins-collection
+cd nebula-collection
 
-conda create -n "nebulaplugins-collection" python=3.9 -y
+conda create -n "nebula-collection" python=3.9 -y
 
 eval "$(conda shell.bash hook)"
 
-conda activate nebulaplugins-collection
+conda activate nebula-collection
 
 pip install -e ".[dev]"
